@@ -431,6 +431,7 @@ button, a { font: inherit; }
 .video-showcase { margin: 18px 0 0; overflow: hidden; border: 1px solid var(--line); background: #171a26; }
 .video-showcase video { width: 100%; max-height: 760px; display: block; background: #0f1119; }
 .video-showcase figcaption { padding: 12px 14px; color: var(--muted); background: var(--surface); font-size: 11px; letter-spacing: .03em; }
+.video-error { margin: 0; padding: 12px 14px; color: #a13d4b; background: #fff1f2; font-size: 12px; }
 
 @media (max-width: 1120px) {
   .shell { width: 100%; grid-template-columns: 180px minmax(0, 1fr); }

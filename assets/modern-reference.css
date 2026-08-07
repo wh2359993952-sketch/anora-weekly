@@ -430,6 +430,26 @@ button, a { font: inherit; }
 .report-archive .gallery figcaption { padding: 12px 14px; color: var(--muted); background: var(--surface); font-size: 11px; letter-spacing: .03em; }
 .video-showcase { margin: 18px 0 0; overflow: hidden; border: 1px solid var(--line); background: #171a26; }
 .video-showcase video { width: 100%; max-height: 760px; display: block; background: #0f1119; }
+.video-showcase video[hidden] { display: none; }
+.video-load-button {
+  width: 100%;
+  min-height: 220px;
+  padding: 32px;
+  border: 0;
+  display: grid;
+  place-content: center;
+  gap: 10px;
+  color: #fff;
+  background:
+    linear-gradient(rgba(17, 20, 35, .62), rgba(17, 20, 35, .84)),
+    url("week8-big-gift-storyboard.jpg") center / cover;
+  cursor: pointer;
+  text-align: center;
+}
+.video-load-button::before { content: "▶"; font-size: 28px; }
+.video-load-button strong { font: 500 22px/1.2 Georgia, "Songti SC", serif; }
+.video-load-button span { color: rgba(255, 255, 255, .74); font-size: 12px; line-height: 1.6; }
+.video-load-button:disabled { cursor: wait; opacity: .8; }
 .video-showcase figcaption { padding: 12px 14px; color: var(--muted); background: var(--surface); font-size: 11px; letter-spacing: .03em; }
 .video-error { margin: 0; padding: 12px 14px; color: #a13d4b; background: #fff1f2; font-size: 12px; }
 
@@ -447,7 +467,7 @@ button, a { font: inherit; }
   .shell { display: block; }
   .rail { position: relative; width: 100%; height: auto; padding: 22px; border-right: 0; border-bottom: 1px solid var(--line); }
   .brand strong { font-size: 18px; }
-  .week-nav { margin-top: 22px; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .week-nav { margin-top: 22px; grid-template-columns: repeat(6, 1fr); gap: 6px; }
   .week-nav a { display: block; min-height: auto; padding: 10px 3px; border: 0; border-bottom: 2px solid var(--line); font-size: 9px; text-align: center; }
   .week-nav a::before, .week-nav a.active::after { display: none; }
   .week-nav a.active { border-color: var(--blue); }
@@ -457,7 +477,8 @@ button, a { font: inherit; }
   .hero { padding: 38px 22px 0; gap: 35px; }
   .hero-copy { padding-bottom: 0; }
   .hero h1 { font-size: 52px; }
-  .hero-visual, .hero-visual img { min-height: 330px; }
+  .hero-visual { min-height: 0; }
+  .hero-visual img { height: auto; min-height: 0; object-fit: contain; }
   .projects { padding: 58px 22px; }
   .project-grid { grid-template-columns: 1fr; }
   .project-note { min-height: 270px; }
@@ -467,4 +488,5 @@ button, a { font: inherit; }
   .report-archive .week > summary { grid-template-columns: 1fr; gap: 8px; }
   .report-archive .week-body { padding: 22px; }
   .report-archive .project-block { padding: 20px; }
+  .video-load-button { min-height: 170px; padding: 24px 18px; }
 }

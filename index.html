@@ -1,0 +1,1707 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>实习周报</title>
+  <style>
+:root {
+  --black: #050505;
+  --bg: #f4eedf;
+  --paper: #fffdf6;
+  --ink: #1b1b1b;
+  --text: #3e3a34;
+  --muted: #7b7468;
+  --line: #ded6c6;
+  --green: #9cff24;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.85;
+}
+
+img {
+  max-width: 100%;
+}
+
+.topbar {
+  background: var(--black);
+  color: #fff;
+}
+
+.profile {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 54px 0 42px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 56px;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.meta div {
+  padding: 18px 20px;
+  background: var(--black);
+}
+
+.meta dt {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 13px;
+}
+
+.meta dd {
+  margin: 6px 0 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.page {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 36px 0 72px;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 28px;
+  align-items: stretch;
+  margin-bottom: 22px;
+  padding: 34px 38px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.intro h2 {
+  margin-bottom: 12px;
+  font-size: 28px;
+  line-height: 1.3;
+}
+
+.intro p {
+  margin-bottom: 0;
+  max-width: 820px;
+  color: var(--text);
+}
+
+.intro-status {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 28px;
+  border-left: 1px solid var(--line);
+}
+
+.intro-status span,
+.week summary small {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.intro-status strong {
+  margin-top: 6px;
+  font-size: 20px;
+}
+
+.weeks {
+  display: grid;
+  gap: 18px;
+}
+
+.week {
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.week summary {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: 24px 38px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.week summary::-webkit-details-marker {
+  display: none;
+}
+
+.week summary span {
+  color: #9a244c;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.week summary small {
+  display: block;
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+
+.week summary b {
+  font-size: 22px;
+  line-height: 1.35;
+}
+
+.week[open] summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.week-body {
+  padding: 34px 38px 46px;
+}
+
+.report-section {
+  max-width: 960px;
+}
+
+.report-section + .report-section {
+  margin-top: 34px;
+}
+
+.report-section h3 {
+  margin-bottom: 12px;
+  font-size: 24px;
+  line-height: 1.35;
+}
+
+.report-section p {
+  margin-bottom: 0;
+  color: var(--text);
+  text-align: justify;
+}
+
+.summary-list {
+  margin: 0;
+  padding-left: 22px;
+  color: var(--text);
+}
+
+.summary-list li + li {
+  margin-top: 8px;
+}
+
+.project {
+  max-width: none;
+  padding-top: 8px;
+}
+
+.project-block {
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.project-block + .project-block {
+  margin-top: 42px;
+}
+
+.project-block h4 {
+  margin-bottom: 14px;
+  color: #9a244c;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.project-block h5 {
+  margin: 34px 0 14px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.project-block p + p {
+  margin-top: 12px;
+}
+
+.gallery {
+  margin-top: 24px;
+}
+
+.gallery + .gallery {
+  margin-top: 28px;
+}
+
+.gallery figure {
+  margin: 0;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+  background: #fff;
+  cursor: zoom-in;
+}
+
+.overview-gallery img {
+  max-height: none;
+  object-fit: contain;
+}
+
+.compact-gallery img {
+  max-height: 460px;
+  object-fit: contain;
+  background: #242424;
+}
+
+.compact-gallery figure + figure {
+  margin-top: 24px;
+}
+
+.process-gallery {
+  max-width: 760px;
+}
+
+.process-gallery img {
+  object-fit: contain;
+}
+
+.ui-pair-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ui-pair-gallery img {
+  height: 560px;
+  object-fit: contain;
+  background: #242424;
+}
+
+.size-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.size-gallery img {
+  aspect-ratio: 3 / 4;
+  height: 360px;
+  object-fit: cover;
+}
+
+.support-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 760px;
+}
+
+.support-gallery img {
+  height: 260px;
+  object-fit: contain;
+  background: #242424;
+}
+
+figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.lightbox {
+  width: min(96vw, 1280px);
+  max-width: 96vw;
+  max-height: 92vh;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.82);
+}
+
+.lightbox img {
+  display: block;
+  max-width: 100%;
+  max-height: 92vh;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.close-lightbox {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.52);
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  .profile,
+  .page {
+    width: min(100% - 24px, 640px);
+  }
+
+  .profile {
+    padding: 38px 0 30px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  .meta,
+  .intro,
+  .week summary {
+    grid-template-columns: 1fr;
+  }
+
+  .intro,
+  .week summary,
+  .week-body {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .intro-status {
+    padding-top: 18px;
+    padding-left: 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .week summary {
+    gap: 6px;
+  }
+
+  .size-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .size-gallery img {
+    height: 260px;
+  }
+
+  .compact-gallery img {
+    max-height: 320px;
+  }
+
+  .ui-pair-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .ui-pair-gallery img {
+    height: auto;
+    max-height: 520px;
+  }
+
+  .support-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .support-gallery img {
+    height: auto;
+    max-height: 300px;
+  }
+}
+
+/* Modern Museum theme — selected direction */
+:root {
+  --bg: #f4f5f7;
+  --paper: #fbfbfc;
+  --ink: #171923;
+  --text: #545966;
+  --muted: #777c89;
+  --line: #d9dce3;
+  --green: #3e5ee8;
+  --blue: #3e5ee8;
+  --blue-soft: #dfe5ff;
+  --shadow: 0 18px 48px rgba(26, 33, 57, 0.09);
+}
+
+body {
+  background:
+    linear-gradient(rgba(30, 36, 55, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 36, 55, 0.035) 1px, transparent 1px),
+    var(--bg);
+  background-size: 48px 48px;
+  color: var(--ink);
+  font-family: Inter, "SF Pro Display", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.week-rail {
+  position: fixed;
+  z-index: 20;
+  inset: 0 auto 0 0;
+  width: 224px;
+  display: flex;
+  flex-direction: column;
+  padding: 38px 30px 28px;
+  border-right: 1px solid var(--line);
+  background: rgba(250, 250, 252, 0.88);
+  backdrop-filter: blur(20px);
+}
+
+.rail-brand {
+  padding-top: 15px;
+  border-top: 4px solid var(--ink);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.rail-brand strong {
+  display: block;
+  font: 700 22px/1.05 Georgia, "Songti SC", "STSong", serif;
+  letter-spacing: -0.03em;
+}
+
+.rail-brand span {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.rail-weeks {
+  display: grid;
+  margin-top: 72px;
+}
+
+.rail-weeks a {
+  position: relative;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  align-items: center;
+  min-height: 50px;
+  border-bottom: 1px solid var(--line);
+  color: #8a8e99;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: color 0.2s ease, padding 0.2s ease;
+}
+
+.rail-weeks a:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.rail-weeks a::before {
+  content: attr(data-index);
+  color: #b0b4bf;
+}
+
+.rail-weeks a:hover,
+.rail-weeks a.active {
+  padding-left: 5px;
+  color: var(--ink);
+}
+
+.rail-weeks a.active {
+  font-weight: 700;
+}
+
+.rail-weeks a.active::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 -31px;
+  width: 4px;
+  background: var(--blue);
+}
+
+.rail-note {
+  margin-top: auto;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+}
+
+.topbar,
+.page {
+  margin-left: 224px;
+}
+
+.topbar {
+  border-bottom: 1px solid var(--line);
+  background: rgba(248, 249, 251, 0.82);
+  color: var(--ink);
+  backdrop-filter: blur(18px);
+}
+
+.profile {
+  width: min(1180px, calc(100% - 80px));
+  padding: 64px 0 52px;
+}
+
+.eyebrow {
+  margin-bottom: 20px;
+  color: var(--blue);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+}
+
+h1 {
+  margin-bottom: 44px;
+  font: 500 clamp(58px, 6vw, 92px)/0.95 Georgia, "Songti SC", "STSong", serif;
+  letter-spacing: -0.06em;
+}
+
+.meta {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 0;
+  border-top: 1px solid var(--ink);
+  background: transparent;
+}
+
+.meta div {
+  padding: 18px 20px 0 0;
+  border-right: 1px solid var(--line);
+  background: transparent;
+}
+
+.meta div + div {
+  padding-left: 20px;
+}
+
+.meta div:last-child {
+  border-right: 0;
+}
+
+.meta dt {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.meta dd {
+  color: var(--ink);
+  font-size: 17px;
+}
+
+.page {
+  width: min(1180px, calc(100% - 304px));
+  margin-right: auto;
+  padding: 44px 0 100px;
+}
+
+.intro {
+  position: relative;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  margin-bottom: 32px;
+  padding: 62px 0 46px;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  background: transparent;
+}
+
+.intro::before {
+  content: "DESIGN JOURNEY · WEEK 01—07";
+  position: absolute;
+  top: 24px;
+  left: 0;
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.intro h2 {
+  margin-bottom: 20px;
+  font: 500 clamp(36px, 4vw, 58px)/1.08 Georgia, "Songti SC", "STSong", serif;
+  letter-spacing: -0.04em;
+}
+
+.intro p {
+  max-width: 760px;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 2;
+}
+
+.intro-status {
+  align-self: stretch;
+  padding-left: 30px;
+  border-left-color: var(--line);
+}
+
+.intro-status strong {
+  font: 500 28px/1.15 Georgia, "Songti SC", serif;
+}
+
+.weeks {
+  gap: 18px;
+}
+
+.week {
+  scroll-margin-top: 24px;
+  border: 1px solid var(--line);
+  background: rgba(251, 251, 252, 0.92);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.week summary {
+  grid-template-columns: 166px minmax(0, 1fr);
+  min-height: 110px;
+  padding: 26px 34px;
+  transition: background 0.2s ease;
+}
+
+.week summary:hover {
+  background: #f7f8fb;
+}
+
+.week summary span {
+  color: var(--blue);
+  font: 500 24px/1.2 Georgia, "Songti SC", serif;
+  letter-spacing: -0.02em;
+}
+
+.week summary small {
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-family: Inter, "PingFang SC", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.week summary b {
+  font: 500 clamp(21px, 2.4vw, 30px)/1.3 Georgia, "Songti SC", "STSong", serif;
+  letter-spacing: -0.02em;
+}
+
+.week[open] {
+  box-shadow: var(--shadow);
+}
+
+.week[open] summary {
+  border-bottom-color: var(--ink);
+}
+
+.week-body {
+  padding: 46px 46px 64px;
+}
+
+.report-section {
+  max-width: 900px;
+}
+
+.report-section + .report-section {
+  margin-top: 42px;
+}
+
+.report-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+  font: 500 27px/1.3 Georgia, "Songti SC", "STSong", serif;
+}
+
+.report-section h3::before {
+  content: "";
+  width: 28px;
+  height: 2px;
+  flex: 0 0 auto;
+  background: var(--blue);
+}
+
+.report-section p,
+.summary-list {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 2;
+}
+
+.summary-list {
+  padding-left: 24px;
+}
+
+.summary-list li::marker {
+  color: var(--blue);
+}
+
+.project {
+  padding-top: 20px;
+}
+
+.project-block {
+  padding-top: 38px;
+  border-top-color: var(--ink);
+}
+
+.project-block + .project-block {
+  margin-top: 66px;
+}
+
+.project-block h4 {
+  margin-bottom: 20px;
+  color: var(--ink);
+  font: 500 clamp(28px, 3.2vw, 42px)/1.2 Georgia, "Songti SC", "STSong", serif;
+  letter-spacing: -0.035em;
+}
+
+.project-block h5 {
+  margin: 42px 0 16px;
+  color: var(--blue);
+  font-size: 17px;
+  letter-spacing: 0.03em;
+}
+
+.gallery {
+  margin-top: 30px;
+}
+
+.gallery figure {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: 0 12px 36px rgba(26, 33, 57, 0.08);
+}
+
+.gallery img,
+.overview-gallery img,
+.compact-gallery img,
+.process-gallery img,
+.ui-pair-gallery img,
+.size-gallery img,
+.support-gallery img {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  background: #f1f2f5;
+}
+
+.compact-gallery,
+.process-gallery {
+  max-width: none;
+}
+
+.ui-pair-gallery,
+.support-gallery {
+  gap: 22px;
+  max-width: none;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.size-gallery {
+  gap: 22px;
+}
+
+figcaption {
+  margin: 12px 2px 2px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+.lightbox img {
+  width: auto;
+  max-width: 96vw;
+  max-height: 92vh !important;
+  background: transparent;
+}
+
+@media (max-width: 1100px) {
+  .week-rail {
+    display: none;
+  }
+
+  .topbar,
+  .page {
+    margin-left: 0;
+  }
+
+  .page {
+    width: min(100% - 40px, 960px);
+  }
+}
+
+@media (max-width: 760px) {
+  .profile,
+  .page {
+    width: min(100% - 28px, 680px);
+  }
+
+  .profile {
+    padding: 40px 0 32px;
+  }
+
+  h1 {
+    margin-bottom: 30px;
+    font-size: 50px;
+  }
+
+  .meta,
+  .intro,
+  .week summary {
+    grid-template-columns: 1fr;
+  }
+
+  .meta div,
+  .meta div + div {
+    padding: 14px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .intro {
+    padding: 56px 0 34px;
+  }
+
+  .intro-status {
+    padding: 22px 0 0;
+  }
+
+  .week summary,
+  .week-body {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  .week summary {
+    gap: 12px;
+  }
+
+  .week-body {
+    padding-top: 34px;
+    padding-bottom: 46px;
+  }
+
+  .ui-pair-gallery,
+  .support-gallery,
+  .size-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+  </style>
+  <link rel="stylesheet" href="assets/modern-reference.css">
+</head>
+<body>
+  <main class="shell">
+    <aside class="rail">
+      <a class="brand" href="#top">
+        <strong>王好 · 设计周报</strong>
+        <span>Weekly Archive 01—08</span>
+      </a>
+
+      <nav class="week-nav" aria-label="周报时间线">
+        <a href="#week-1-2" data-index="01">WEEK 1–2</a>
+        <a href="#week-3" data-index="03">WEEK 3</a>
+        <a href="#week-4" data-index="04">WEEK 4</a>
+        <a href="#week-5-6" data-index="05">WEEK 5–6</a>
+        <a href="#week-7" data-index="07">WEEK 7</a>
+        <a class="active" href="#week-8" data-index="08">WEEK 8</a>
+      </nav>
+
+      <div class="rail-footer">
+        INTERNSHIP DESIGN LOG<br>
+        PRODUCT · UI · VISUAL<br>
+        2026 / SHANGHAI
+      </div>
+    </aside>
+
+    <section class="content" id="top">
+      <header class="topbar">
+        <p>Selected work / Internship journal</p>
+        <div class="meta">
+          <span>08 Weeks</span>
+          <span>11 Projects</span>
+          <span>王好 · MUX 酷狗设计部</span>
+        </div>
+      </header>
+
+      <section class="hero" id="week8-overview">
+        <div class="hero-copy">
+          <div class="kicker">Week 08 · Motion Storytelling</div>
+          <h1>让静态分镜，<em>成为流动叙事。</em></h1>
+          <p class="lede">第八周围绕七夕「大礼物」完成从叙事分镜到动画视频的完整制作。以织女与牛郎跨越云海、在鹊桥月下相逢为主线，统一人物形象、镜头节奏与东方幻想氛围，并通过体积雾、星光粒子、丝绸动态和冷暖光影强化礼物的沉浸感与情绪高潮。</p>
+          <div class="stats">
+            <div class="stat"><strong>05</strong><span>Story Beats</span></div>
+            <div class="stat"><strong>02</strong><span>Gift Roles</span></div>
+            <div class="stat"><strong>01</strong><span>Final Film</span></div>
+          </div>
+        </div>
+
+        <figure class="hero-visual">
+          <img loading="eager" decoding="async" fetchpriority="high" src="assets/week8-big-gift-storyboard.jpg" alt="七夕大礼物分镜、备用画面与人物形象设计">
+          <div class="image-index">08</div>
+          <figcaption class="image-caption">
+            <div>
+              <strong>七夕大礼物 · 分镜与动画</strong>
+              <span>Storyboard / Motion direction</span>
+            </div>
+            <b>FILM 01</b>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="projects" aria-labelledby="project-title">
+        <div class="section-head">
+          <h2 id="project-title">Week 08 / 重点项目</h2>
+          <span>Storyboard → Motion → Final Film</span>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-note">
+            <span class="number">01</span>
+            <h3>七夕「大礼物」<br>分镜与动画制作</h3>
+            <p>从故事节拍、角色动作和镜头构图出发，搭建“启程—追寻—相逢—定格”的完整叙事；再以电影级东方幻想美学统一云海、鹊鸟、月色与鹊桥场景，通过柔和体积光、粉蓝渐变、梦幻星光粒子与轻盈丝绸动态，形成浪漫、空灵且具有高潮感的大礼物体验。</p>
+          </article>
+          <figure class="project-image">
+            <img loading="lazy" decoding="async" src="assets/week8-big-gift-storyboard.jpg" alt="七夕大礼物分镜设计全览">
+            <figcaption>BIG GIFT / STORYBOARD &amp; MOTION</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="timeline" aria-label="第一周至第八周项目摘要">
+        <article><small>WEEK 1–2</small><h4>基础学习与秀场 UI</h4><p>熟悉流程与工具，完成高等级用户开屏权益的风格探索和多尺寸适配。</p></article>
+        <article><small>WEEK 3</small><h4>《音啾》与七夕探索</h4><p>完成陪伴 IP 参赛方案整合，并启动七夕集卡角色与节日视觉研究。</p></article>
+        <article><small>WEEK 4</small><h4>角色、卡牌与 UI</h4><p>推进五套人物原画、人物大卡、卡背和活动 UI 的阶段性输出。</p></article>
+        <article><small>WEEK 5–6</small><h4>多轮迭代与细节延展</h4><p>根据协作反馈收敛人物方向，延展星空河灯、气泡与勋章组件。</p></article>
+        <article><small>WEEK 7</small><h4>系统定稿与玩法道具</h4><p>完成七夕 IP 体系定稿，以及螺旋桨箱四状态和落地效果设计。</p></article>
+        <article><small>WEEK 8</small><h4>大礼物分镜与动画</h4><p>完成七夕大礼物的叙事分镜、画面风格设计与动画视频落地。</p></article>
+      </section>
+
+      <section class="report-archive" id="archive-details" aria-labelledby="archive-title">
+        <div class="section-head">
+          <h2 id="archive-title">Week 01—08 / 完整周报</h2>
+          <span>Click a week to view all work</span>
+        </div>
+
+        <section class="weeks" aria-label="实习周报列表">
+      <details class="week">
+        <summary>
+          <span>
+            <small>第四周</small>
+            WEEK 4
+          </span>
+          <b>七夕集卡卡牌完成 / UI 换肤优化中</b>
+        </summary>
+
+        <div class="week-body">
+          <article class="report-section">
+            <h3>工作总结</h3>
+            <ul class="summary-list">
+              <li>延续上周七夕集卡风格探索方向，完成 5 张人物原画的视觉细化，围绕不同角色气质、服饰色彩和道具元素形成系列化表达。</li>
+              <li>完成 5 张人物大卡和 1 张卡背设计，将人物形象、卡面边框、色彩区分和七夕主题符号进行统一整合，强化集卡玩法中的识别度与收集感。</li>
+              <li>推进七夕活动 UI 换肤设计，围绕活动首页、排行榜、弹窗、直播间入口与素材组件进行视觉适配，目前整体方向已建立，细节仍在持续优化中。</li>
+            </ul>
+          </article>
+
+          <article class="report-section">
+            <h3>成长性</h3>
+            <p>本周在上周风格探索的基础上，进一步从“确定方向”推进到“形成可落地的系列资产”。在人物原画与卡牌设计中，开始更重视角色之间的差异化、卡面统一性和活动玩法识别；在 UI 换肤部分，也逐步理解节日活动视觉不能只停留在装饰层面，还需要兼顾页面信息层级、按钮可读性、直播间场景适配和用户操作路径。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>待改进</h3>
+            <p>人物与卡牌部分已经形成较完整的系列效果，但仍需要继续检查细节统一性，例如卡面边框、角色比例、文字位置和卡背识别是否足够稳定。UI 换肤仍处于优化阶段，后续需要继续调整页面背景、活动组件、弹窗层级和直播间露出位置，避免节日氛围过强导致核心信息被削弱。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>工作小结</h3>
+            <p>WEEK 4 的重点是将七夕集卡项目从前期风格探索推进到具体资产产出。本周完成了人物原画、人物大卡和卡背的阶段性设计，并同步推进活动 UI 换肤，为后续完整活动页面落地和细节优化提供了较明确的视觉基础。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>后续工作展望</h3>
+            <p>接下来会继续围绕 UI 换肤进行优化，重点检查活动页面与直播间场景中的信息可读性、按钮状态、装饰元素比例和整体氛围统一性。同时也会继续整理卡牌资产与页面之间的关系，让角色形象、卡面系统和活动界面形成更完整的七夕主题体验。</p>
+          </article>
+
+          <article class="report-section project">
+            <h3>项目总结</h3>
+
+            <div class="project-block">
+              <h4>项目一：七夕集卡人物原画与卡牌设计</h4>
+              <p>该项目延续上周“七夕集卡风格探索”的方向，将前期确定的新中式 3D 写实古风风格进一步落到具体角色和卡牌资产中。本周完成 5 张人物原画、5 张人物大卡和 1 张卡背，围绕“玉佩、针线、喜鹊、同心结、河灯”等七夕元素建立角色区分，并通过不同卡面色彩强化系列感。</p>
+              <p>设计中重点关注人物姿态、服饰材质、卡面轮廓和卡背识别的统一关系，让单张卡牌具有独立记忆点，同时放在整套集卡系统中也能保持一致的节日氛围和视觉秩序。</p>
+              <div class="gallery overview-gallery compact-gallery" aria-label="七夕集卡人物原画与卡牌设计">
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-01.jpg" alt="七夕集卡 5 张人物原画完整展示">
+                  <figcaption>人物原画：5 位七夕主题角色完整展示</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-02.jpg" alt="七夕集卡 5 张人物原画 5 张人物大卡和 1 张卡背">
+                  <figcaption>阶段完成：5 张人物原画、5 张人物大卡与 1 张卡背</figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <div class="project-block">
+              <h4>项目二：七夕活动 UI 换肤（优化中）</h4>
+              <p>UI 换肤围绕七夕集卡活动的页面氛围展开，尝试将卡牌元素、红粉色节日氛围、活动按钮、弹窗样式和直播间入口进行统一包装，使活动主视觉能够延展到不同使用场景中。</p>
+              <p>目前方案仍在优化中，后续会继续调整背景层次、组件边界、按钮质感和页面信息层级，让整体视觉在保持节日感的同时，保证用户能够快速理解活动规则、排名信息和操作入口。</p>
+              <div class="gallery overview-gallery" aria-label="七夕活动 UI 换肤">
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-03.jpg" alt="七夕活动 UI 换肤进行中方案">
+                  <figcaption>进行中：七夕活动 UI 换肤方案</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+        </div>
+      </details>
+
+      <details class="week">
+        <summary>
+          <span>
+            <small>历史周报</small>
+            WEEK 3
+          </span>
+          <b>2 个项目 / 3 张作品图</b>
+        </summary>
+
+        <div class="week-body">
+          <article class="report-section">
+            <h3>工作总结</h3>
+            <ul class="summary-list">
+              <li>完成 Q Music Ideas 陪伴 IP 与小组件创意征集作品《音啾》的整体方案整理，围绕角色设定、桌面组件场景和参赛展示版式进行统一包装。</li>
+              <li>结合比赛要求“栖居之屏，伴你听歌”，梳理作品与命题之间的对应关系，突出陪伴型 IP、桌面小组件、音乐情绪陪伴和互动状态表达。</li>
+              <li>推进七夕集卡风格探索，基于以往集卡玩法经验，尝试将织女角色、古风道具、卡面元素和节日氛围结合，形成进行中的视觉方向稿。</li>
+            </ul>
+          </article>
+
+          <article class="report-section">
+            <h3>成长性</h3>
+            <p>本周从单纯完成视觉输出，进一步转向根据命题组织方案表达。在《音啾》作品中，开始关注角色设定、组件功能、使用场景和参赛展示之间的叙事关系；在七夕集卡探索中，也尝试把过往玩法经验转化为视觉方法，思考角色、道具、卡面和节日符号如何共同服务项目主题。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>待改进</h3>
+            <p>后续需要继续提升方案说明的精炼度，减少重复表达，让每一张展示图都能更清楚地承担信息传达功能。进行中项目还需要进一步验证角色风格与业务场景的适配度，并在卡面系列化、材质细节和玩法识别上做更完整的推敲。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>工作小结</h3>
+            <p>WEEK 3 以赛事作品收口和新项目探索为主。一方面完成《音啾》参赛方案的视觉整合，另一方面推进七夕集卡方向的初步定位，为后续继续细化角色形象、卡牌系统和活动视觉规范打下基础。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>后续工作展望</h3>
+            <p>接下来会继续围绕七夕集卡项目深化角色与卡面设计，补充更完整的视觉系列关系，并在后续页面中同步整理项目过程、阶段结果和最终输出，让周报内容既能记录工作进展，也能呈现设计思考。</p>
+          </article>
+
+          <article class="report-section project">
+            <h3>项目总结</h3>
+
+            <div class="project-block">
+              <h4>项目一：Q Music Ideas 陪伴 IP 与小组件创意征集《音啾》</h4>
+              <p>该作品围绕“陪伴型听歌搭子”展开，将音乐精灵设定为可以停留在手机桌面的小组件伙伴。角色以粉色系、耳机、指挥棒、小云雀伙伴等元素建立亲和、轻盈和音乐感，通过锁屏、时钟组件、倒计时、照片组件和天气组件等场景，呈现它在日常听歌中的陪伴价值。</p>
+              <p>展示上重点强化作品与比赛命题的连接：它不只是单一角色形象，而是可以被放进桌面组件体系中的情绪陪伴 IP。用户在点亮屏幕、查看日程或听歌时，都能通过角色状态和组件内容获得轻松、可爱的反馈。</p>
+              <div class="gallery overview-gallery" aria-label="音啾比赛作品">
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-04.png" alt="音啾完成比赛作品">
+                  <figcaption>已完成作品：《音啾》整体方案展示</figcaption>
+                </figure>
+              </div>
+              <div class="gallery process-gallery" aria-label="比赛要求">
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-05.png" alt="Q Music Ideas 比赛要求截图">
+                  <figcaption>比赛要求：陪伴型 IP 与桌面小组件创意方向</figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <div class="project-block">
+              <h4>项目二：七夕集卡风格探索（进行中）</h4>
+              <p>该方向基于以往集卡玩法进行延展，将七夕主题与“织女”角色设定结合，尝试建立更完整的国风卡面视觉体系。当前阶段重点探索角色风格、服饰材质、古典道具和卡牌系列化表达，方向定位为新中式 3D 写实古风 CG 风。</p>
+              <p>视觉思路上，角色以柔和浅色衣裙、轻透纱质、刺绣纹样和玉佩等细节建立东方审美；卡牌元素则结合玉佩、针线、喜鹊、同心结、河灯等七夕符号，为后续玩法包装、卡面分级和活动页面延展提供可继续深化的基础。</p>
+              <div class="gallery overview-gallery" aria-label="七夕集卡风格探索">
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-06.jpg" alt="七夕集卡风格探索进行中作品">
+                  <figcaption>进行中：七夕集卡角色与卡面风格探索</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+        </div>
+      </details>
+
+      <details class="week">
+        <summary>
+          <span>
+            <small>历史周报</small>
+            WEEK 1-2
+          </span>
+          <b>3 个页面 / 18 个尺寸延展</b>
+        </summary>
+
+        <div class="week-body">
+          <article class="report-section">
+            <h3>工作总结</h3>
+            <ul class="summary-list">
+              <li>前期重点熟悉实习期间使用的新软件和设计工作流，包括文件结构整理、图层规范、切图导出和多尺寸适配方式。</li>
+              <li>围绕秀场开屏特权项目进行风格探索，在原有 M4-M5 视觉基础上延展 M5 与 M6 的新等级表现。</li>
+              <li>完成 3 个页面方向的视觉输出，并分别适配 6 个尺寸，共形成 18 张页面延展图，便于后续投放与开发落地。</li>
+            </ul>
+          </article>
+
+          <article class="report-section">
+            <h3>成长性</h3>
+            <p>通过前两周的学习和项目练习，逐步从“熟悉工具”过渡到“理解项目需求并进行系统化输出”。在设计过程中，对直播场景中的等级权益表达有了更清晰的认识，也开始关注不同尺寸下的视觉重心、信息层级和素材留白，提升了从单张视觉方案延展到完整适配体系的能力。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>待改进</h3>
+            <p>本阶段在多尺寸延展和风格区分上仍有继续优化空间。后续可在正式输出前更充分地梳理不同等级之间的视觉梯度、材质差异和适配规则；在尺寸适配阶段，也需要进一步加强对文字安全区、主体位置和按钮区域的细节检查，减少因比例变化带来的局部偏移和信息压缩问题。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>工作小结</h3>
+            <p>WEEK 1-2 以学习适应和项目实践为主，一方面完成了新软件与基础流程的熟悉，另一方面通过秀场 UI 项目进行实际设计训练。整体产出覆盖风格探索、等级视觉延展和多尺寸页面适配，为后续更高效地承接正式设计任务打下了基础。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>后续工作展望</h3>
+            <p>接下来会继续提升对业务场景和设计规范的理解，在承接具体需求时更早介入需求分析与视觉方向判断，形成从风格探索、方案细化到多尺寸落地的完整工作方法。同时，也会持续积累直播、秀场、等级权益等社娱场景的视觉表达经验，提高方案输出的准确性、完整度和落地效率。</p>
+          </article>
+
+          <article class="report-section project">
+            <h3>项目总结</h3>
+            <div class="project-block">
+              <h4>秀场 UI：新增 M5、M6 开屏特权</h4>
+              <p>该项目围绕秀场高等级用户的开屏权益展示展开，目标是在延续现有 M4-M5 视觉识别的基础上，补充 M5 与 M6 的开屏特权设计。前期先分析原有页面的构图、人物主体、等级标识和直播氛围，再结合新等级的差异化需求进行风格探索。</p>
+              <p>设计思路上，M5 侧重延续粉紫调金属拉丝风格，通过柔和光效、弧形包裹和梦幻色彩强化亲和力与精致感；M6 则进一步提升稀缺感和尊贵感，分别尝试黑金调金属镶钻风格与亮色钻石质感风格，通过金属材质、钻石元素、光束和暗亮对比拉开等级层次。</p>
+              <p>初版阶段主要集中在三种风格方向的探索，先验证人物主体、背景材质、等级标签和底部信息区的关系。后续在最终版中进一步补充 M5、M6 权益页关系、设计元素拆解和完整尺寸展示，让方案从单张视觉效果推进到更完整的项目表达。最终完成三个页面方向，并将每个方向延展为六个常用尺寸，保证在不同屏幕比例下仍能保持主体突出、信息清晰和品牌露出完整。</p>
+
+              <div class="gallery process-gallery" aria-label="设计迭代图">
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-07.jpg" alt="秀场 UI 初版风格探索图">
+                  <figcaption>初版探索：M5、M6 三种风格方向对比</figcaption>
+                </figure>
+              </div>
+
+              <div class="gallery overview-gallery" aria-label="项目最终版总览图">
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-08.jpg" alt="秀场 UI 新增 M5、M6 开屏特权最终版总览">
+                  <figcaption>最终版总览：M5 与 M6 开屏特权完整方案</figcaption>
+                </figure>
+              </div>
+
+              <h5>多尺寸延展图</h5>
+              <div class="gallery size-gallery" aria-label="多尺寸延展图">
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-09.jpg" alt="M5 开屏特权 480x480 尺寸延展">
+                  <figcaption>M5 / 480x480</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-10.jpg" alt="M5 开屏特权 640x1136 尺寸延展">
+                  <figcaption>M5 / 640x1136</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-11.jpg" alt="M5 开屏特权 720x1280 尺寸延展">
+                  <figcaption>M5 / 720x1280</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-12.jpg" alt="M5 开屏特权 750x1334 尺寸延展">
+                  <figcaption>M5 / 750x1334</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-13.jpg" alt="M5 开屏特权 1080x2340 尺寸延展">
+                  <figcaption>M5 / 1080x2340</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-14.jpg" alt="M5 开屏特权 1126x2438 尺寸延展">
+                  <figcaption>M5 / 1126x2438</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-15.jpg" alt="M6 亮色版 480x480 尺寸延展">
+                  <figcaption>M6 亮色版 / 480x480</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-16.jpg" alt="M6 亮色版 640x1136 尺寸延展">
+                  <figcaption>M6 亮色版 / 640x1136</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-17.jpg" alt="M6 亮色版 720x1080 尺寸延展">
+                  <figcaption>M6 亮色版 / 720x1080</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-18.jpg" alt="M6 亮色版 750x1334 尺寸延展">
+                  <figcaption>M6 亮色版 / 750x1334</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-19.jpg" alt="M6 亮色版 1080x2340 尺寸延展">
+                  <figcaption>M6 亮色版 / 1080x2340</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-20.jpg" alt="M6 亮色版 1126x2438 尺寸延展">
+                  <figcaption>M6 亮色版 / 1126x2438</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-21.jpg" alt="M6 暗色版 480x480 尺寸延展">
+                  <figcaption>M6 暗色版 / 480x480</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-22.jpg" alt="M6 暗色版 640x1136 尺寸延展">
+                  <figcaption>M6 暗色版 / 640x1136</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-23.jpg" alt="M6 暗色版 720x1280 尺寸延展">
+                  <figcaption>M6 暗色版 / 720x1280</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-24.jpg" alt="M6 暗色版 750x1334 尺寸延展">
+                  <figcaption>M6 暗色版 / 750x1334</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-25.jpg" alt="M6 暗色版 1080x2340 尺寸延展">
+                  <figcaption>M6 暗色版 / 1080x2340</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/archive/embedded-26.jpg" alt="M6 暗色版 1126x2438 尺寸延展">
+                  <figcaption>M6 暗色版 / 1126x2438</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+        </div>
+      </details>
+
+      <details class="week">
+        <summary>
+          <span>
+            <small>第五至六周 / 合并周报</small>
+            WEEK 5–6
+          </span>
+          <b>角色卡牌迭代收口 / 星空河灯主题 UI 与组件延展</b>
+        </summary>
+
+        <div class="week-body">
+          <article class="report-section">
+            <h3>工作总结</h3>
+            <ul class="summary-list">
+              <li>结合其他部门的沟通反馈，对七夕人物形象与卡牌进行了多轮调整，围绕角色气质、表情姿态、服饰细节及卡面配色持续收敛，使整套形象更贴近用户偏好，也强化了角色间的辨识度。</li>
+              <li>完成活动 UI 换肤方向升级：以星空、月色与河灯为核心氛围，将集卡首页、榜单、弹窗及直播间入口统一至同一套视觉语言，在保留活动信息层级的同时增强七夕主题的沉浸感。</li>
+              <li>基于主 UI 继续完成聊天气泡、勋章等细节组件的延展，建立从主页面到互动场景的统一风格，保证用户在不同触点中都能获得连续、完整的节日体验。</li>
+            </ul>
+          </article>
+
+          <article class="report-section">
+            <h3>成长性</h3>
+            <p>本阶段让我更直观地理解到，活动视觉并不是一次性完成的“出图”，而是需要在跨部门协作、用户偏好、玩法诉求与落地约束之间不断校准。通过多轮角色迭代，我开始以“是否易被用户感知和记住”作为判断标准；在 UI 换肤中，也进一步学习从单一页面思考扩展到主流程、直播间和互动组件的全链路一致性。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>待改进</h3>
+            <p>后续仍需持续关注不同终端与复杂内容场景下的可读性，例如深色星空背景中的文字对比、活动按钮的视觉优先级，以及长列表和直播间信息叠加时的层级稳定性。同时，可在设计前期更早梳理组件状态与技术限制，为后续开发衔接预留更充分的规范说明。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>工作小结</h3>
+            <p>WEEK 5–6 的核心是将七夕项目从“完成主要资产”推进到“根据反馈收敛方案并补足体验细节”。角色和卡牌经过多轮协作迭代后更贴合用户偏好；UI 则由基础换肤深化为星空河灯主题，并通过气泡、勋章等组件延展形成更完整的七夕活动体验。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>后续工作展望</h3>
+            <p>下一阶段将继续跟进页面细节与实际落地效果，重点验证核心活动入口、集卡流程及直播间场景的信息可读性；同时完善组件规范和状态细节，让设计资产能够更高效地支持开发实现与后续运营配置。</p>
+          </article>
+
+          <article class="report-section project">
+            <h3>项目总结</h3>
+
+            <div class="project-block">
+              <h4>项目一：七夕人物形象与卡牌多轮迭代</h4>
+              <p>结合其他部门的意见和对用户偏好的判断，对人物原画、角色姿态、服饰配色及卡牌框型进行了多轮沟通与调整。设计不再只关注单张卡牌的完成度，而是从整套角色的差异化、收集过程中的视觉节奏，以及卡牌在活动页面中的识别效率进行整体优化。</p>
+              <p>最终方案以不同的角色动作、道具与色彩建立记忆点，并通过统一的卡牌轮廓和七夕符号维持系列感，使人物资产既能独立呈现，也能更好地服务集卡玩法和用户的收集期待。</p>
+              <div class="gallery overview-gallery" aria-label="七夕人物形象与卡牌迭代">
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/card-iteration.jpg" alt="七夕人物形象与卡牌多轮迭代方案">
+                  <figcaption>人物形象与卡牌 / 基于跨部门反馈进行多轮迭代收敛</figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <div class="project-block">
+              <h4>项目二：七夕活动 UI 换肤与星空河灯主题构建</h4>
+              <p>在原有活动框架上，重新梳理七夕主题的氛围表达，以深邃星空、月色渐变与河灯微光作为核心视觉元素，将活动首页、排行榜、任务弹窗、直播间入口等主要页面进行统一换肤。通过冷紫蓝为主、暖金橙为点缀的色彩关系，既保留夜色中的浪漫感，也为按钮、奖励与进度信息建立清晰的视觉焦点。</p>
+              <p>设计过程中同步关注玩法路径与页面层级：集卡、榜单、奖励等高频信息维持稳定阅读顺序，氛围元素则承担引导和烘托作用，避免装饰感过强而影响用户操作。</p>
+              <div class="gallery overview-gallery" aria-label="七夕星空河灯主题 UI 换肤">
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/qixi-ui-reskin.jpg" alt="七夕活动星空河灯主题 UI 换肤">
+                  <figcaption>七夕活动 UI 换肤 / 星空、月色与河灯主题贯穿核心页面及直播间</figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <div class="project-block">
+              <h4>项目三：互动组件细节延展</h4>
+              <p>为保证主题体验在更多使用场景中保持连续，进一步围绕聊天互动与激励机制延展气泡、昵称标识及勋章组件。气泡组件结合直播间深浅背景与信息密度调整边框、底色和文字对比；勋章则以喜鹊、星点与暖色金属质感呼应主 UI 的夜空叙事，形成可辨识的荣誉层级。</p>
+              <div class="gallery support-gallery" aria-label="七夕互动组件延展">
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/qixi-bubbles.jpg" alt="七夕主题直播间气泡组件延展">
+                  <figcaption>聊天气泡与直播间互动样式</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/qixi-badge.jpg" alt="七夕主题勋章组件延展">
+                  <figcaption>勋章视觉与等级质感探索</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+        </div>
+      </details>
+
+      <details class="week">
+        <summary>
+          <span>
+            <small>最新一周</small>
+            WEEK 7
+          </span>
+          <b>七夕 IP 皮肤定稿 / 消消乐螺旋桨箱多状态设计</b>
+        </summary>
+
+        <div class="week-body">
+          <article class="report-section">
+            <h3>工作总结</h3>
+            <ul class="summary-list">
+              <li>完成七夕 IP 五套皮肤的最终形象收口，将角色设定、服饰色彩、代表道具与卡牌呈现整合为统一系列，并补足成套卡背设计。</li>
+              <li>围绕角色气质与活动叙事进行动作探索和方案更迭，筛选更具辨识度、情绪表达更清晰的姿态，使人物在单张卡面和整套集卡中都保持记忆点。</li>
+              <li>完成消消乐玩法道具「螺旋桨箱」的最终设计，明确初始、点亮 1、点亮 2、点亮 3 四种状态，通过叶片逐步高亮建立直观的进度反馈。</li>
+              <li>对螺旋桨箱进行了多方向外观探索，并通过初版与最终版对比优化色彩、结构和场景融合度，让道具在棋盘中具备明确识别且不干扰消除信息。</li>
+            </ul>
+          </article>
+
+          <article class="report-section">
+            <h3>成长性</h3>
+            <p>本周的两个项目分别强化了我对“角色资产系统化”和“玩法反馈可视化”的理解。七夕 IP 的收口不只是完成五张图，而是要让人物、卡面、卡背在同一套规则中彼此呼应；螺旋桨箱的设计则让我更关注状态变化是否能在短时间内被用户看懂。通过探索、比较和逐轮优化，我开始从最终使用场景来判断设计是否有效。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>待改进</h3>
+            <p>后续在角色项目中，可更早建立动作、构图与卡牌裁切的检查清单，减少后期因展示比例差异带来的细节调整；在玩法道具设计中，也需要在更小尺寸及高信息密度棋盘内持续验证色彩对比和状态辨识，确保视觉变化既有反馈感，也不会抢占核心消除内容的注意力。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>工作小结</h3>
+            <p>WEEK 7 的重点是两类资产的最终落地：一类是以人物、动作和卡牌体系为核心的七夕 IP 皮肤；另一类是服务消消乐玩法节奏的螺旋桨箱。前者完成了从形象探索到系列定稿的收束，后者建立了由状态递进驱动的清晰视觉反馈，为后续接入项目提供了可使用的设计方案。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>后续工作展望</h3>
+            <p>下一阶段将继续跟进素材落地后的展示效果，检查角色卡牌在实际界面中的裁切、文字与背景适配；同时结合玩法测试观察螺旋桨箱四种状态的识别效率，必要时完善状态规范、动效方向与相关资源说明，使设计能更顺畅地进入开发和配置环节。</p>
+          </article>
+
+          <article class="report-section project">
+            <h3>项目总结</h3>
+
+            <div class="project-block">
+              <h4>项目一：七夕 IP 五套皮肤最终定稿</h4>
+              <p>本周完成七夕 IP 五套皮肤的最终效果。以角色自身气质为基础，为不同人物配置具有区分度的色彩、服饰细节与代表性道具，并将人物与卡牌框型共同收敛，使五套皮肤在视觉上各具记忆点，同时维持统一的新中式七夕氛围。</p>
+              <p>在呈现层面，重点检查角色与卡面的匹配关系：人物主体在卡牌裁切内保持清晰，配色能够快速帮助用户区分角色，系列资产则通过统一轮廓、光感和装饰语言建立整体感。</p>
+              <div class="gallery overview-gallery" aria-label="七夕 IP 五套皮肤最终效果">
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/week7-qixi-final.jpg" alt="七夕 IP 五套皮肤与卡牌最终效果">
+                  <figcaption>七夕 IP 五套皮肤 / 最终形象、人物卡与卡背呈现</figcaption>
+                </figure>
+              </div>
+
+              <h5>活动 UI 换肤方向调整</h5>
+              <p>在原有七夕主题基础上，对首页核心视觉进行了进一步收敛：将具象的河水背景调整为更抽象的银河流光，以更轻盈的空间层次承接人物卡牌与活动信息；同时重构中心圆盘的轮廓与结构，移除月亮意象，为中秋活动预留专属的节日元素和后续视觉表达空间。</p>
+              <p>调整后，首页以银河、星点与暖色光晕建立七夕氛围，既保留浪漫的夜空叙事，也减少了主题元素之间的竞争，让视觉焦点更集中于集卡玩法和角色资产。</p>
+              <div class="gallery overview-gallery" aria-label="七夕活动 UI 换肤调整">
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/week7-ui-reskin-refined.jpg" alt="七夕活动 UI 换肤调整，银河背景与中心圆盘优化">
+                  <figcaption>活动 UI 换肤调整 / 抽象银河替代河水，重构圆盘并为中秋元素预留空间</figcaption>
+                </figure>
+              </div>
+
+              <h5>外观升级、动作探索与卡背收敛</h5>
+              <p>围绕角色的情绪表达和道具特征开展动作探索，对姿态、手部动作、衣摆走势与视线方向进行比较，选择更适合卡牌展示、也更能传递角色性格的方案。卡背设计则从月色、水面、鹊鸟和中式纹样等元素逐步收敛，最终以更简洁而具辨识度的紫金构图统一整套卡牌背面。</p>
+              <div class="gallery support-gallery" aria-label="七夕 IP 动作与卡背设计过程">
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/week7-qixi-motion.jpg" alt="七夕 IP 角色动作探索与更迭">
+                  <figcaption>人物外观升级与动作探索</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/week7-card-back.jpg" alt="七夕卡背多轮更迭与最终方案">
+                  <figcaption>卡背设计的多轮探索与最终收敛</figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <div class="project-block">
+              <h4>项目二：消消乐玩法道具「螺旋桨箱」设计</h4>
+              <p>为消消乐玩法设计螺旋桨箱道具，并围绕玩法进程建立四种清晰状态：初始状态、点亮 1、点亮 2、点亮 3。每次状态变化均通过一片叶片的暖色点亮来传达进度，用户无需阅读额外说明，也能直观感知道具距离触发效果的阶段。</p>
+              <p>最终方案采用紫色箱体搭配金色叶片，既与棋盘内的高饱和元素形成区分，也通过圆润、立体的造型保持轻松的休闲游戏感。落入棋盘后的展示同步验证了道具尺寸、轮廓和亮色反馈，保证其在复杂消除场景中仍能被快速识别。</p>
+              <div class="gallery overview-gallery" aria-label="螺旋桨箱最终版与状态反馈">
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/week7-propeller-final.jpg" alt="螺旋桨箱最终版四种状态与棋盘内展示">
+                  <figcaption>螺旋桨箱最终方案 / 初始至点亮 3 的状态递进及棋盘内效果</figcaption>
+                </figure>
+              </div>
+
+              <h5>外观探索与初版对比</h5>
+              <p>前期围绕箱体结构、叶片形态、色彩组合及立体材质进行了多方向探索；在初版基础上，进一步降低外框的复杂度，强化叶片的状态对比，并优化整体色彩，使最终方案的视觉重心更集中、玩法反馈更直接。</p>
+              <div class="gallery support-gallery" aria-label="螺旋桨箱设计探索过程">
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/week7-propeller-initial.jpg" alt="螺旋桨箱初版四种状态">
+                  <figcaption>螺旋桨箱初版 / 状态节奏与棋盘展示探索</figcaption>
+                </figure>
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/week7-propeller-exploration.jpg" alt="螺旋桨箱多种外观探索">
+                  <figcaption>螺旋桨箱外观探索 / 结构与色彩方向比较</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+        </div>
+      </details>
+
+      <details class="week" open>
+        <summary>
+          <span>
+            <small>最新一周</small>
+            WEEK 8
+          </span>
+          <b>七夕「大礼物」叙事分镜 / 东方幻想动画视频制作</b>
+        </summary>
+
+        <div class="week-body">
+          <article class="report-section">
+            <h3>工作总结</h3>
+            <ul class="summary-list">
+              <li>围绕七夕「大礼物」完成完整分镜方案，以织女与牛郎的双线视角组织叙事，将故事拆分为织女启程、鹊鸟引路、牛郎追寻、云海相逢与鹊桥月下定格五个关键节拍。</li>
+              <li>完成织女、牛郎两套大礼物人物形象及核心画面设计，统一人物比例、服饰语言、随身道具与情绪表演，并通过主镜头与备用镜头补足动画制作所需的画面选择。</li>
+              <li>将静态分镜推进为动画视频，重点处理镜头推进与转场节奏，以及发丝、衣摆、飞鸟、云雾和光粒子的动态层次，使画面从唯美设定转化为具有起承转合的连续体验。</li>
+              <li>建立电影级东方幻想画面风格：以粉、蓝、紫的冷暖渐变为主色，以云海、满月、鹊桥和星光构建空间，并用体积雾、柔和逆光、轮廓光与半透明丝绸材质增强梦幻感和纵深感。</li>
+              <li>针对直播大礼物的观看场景强化首帧识别、人物关系与结尾停留，让短时长内容既能快速建立主题，也能在相逢高潮和月下终幕形成清晰记忆点。</li>
+            </ul>
+          </article>
+
+          <article class="report-section">
+            <h3>成长性</h3>
+            <p>本周从单张视觉设计进一步走向时间维度的叙事设计。制作过程中，我不仅需要判断每一帧是否好看，还要考虑前后镜头的信息承接、人物视线与动作方向、景别变化以及情绪如何逐步累积。通过从故事节拍到分镜，再到动画落地的完整推进，我对“镜头为什么存在、画面如何服务情绪”有了更具体的理解，也提升了在同一美术风格下保持角色与场景连续性的能力。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>待改进</h3>
+            <p>后续可继续加强连续镜头中人物面部、手部和服饰细节的一致性，并更精细地校准镜头时长、运动速度与转场节点，避免唯美元素过多时影响叙事焦点。同时还需针对直播间小屏观看和网络加载环境测试亮度、字幕安全区、视频码率与文件体积，在保留云雾和粒子质感的前提下提高播放稳定性。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>工作小结</h3>
+            <p>WEEK 8 完成了七夕「大礼物」从静态概念到动态成片的关键闭环：先用分镜明确人物关系和情绪路径，再以统一的东方幻想视觉语言塑造浪漫氛围，最后通过镜头、布料、云雾、飞鸟与光效的运动将情绪推向相逢高潮。项目让我把角色设计、场景设计、视觉风格与动态叙事整合到同一条制作链路中。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>后续工作展望</h3>
+            <p>下一阶段将结合实际播放反馈继续优化镜头节奏、转场流畅度和终幕停留时间，并补充音效、音乐节拍与关键动作的同步设计；同时整理角色、场景、光效与视频输出规范，为后续同类型大礼物的快速延展和多端适配沉淀可复用的方法。</p>
+          </article>
+
+          <article class="report-section project">
+            <h3>项目总结</h3>
+
+            <div class="project-block">
+              <h4>项目一：七夕「大礼物」分镜与动画视频</h4>
+              <h5>叙事结构与分镜设计</h5>
+              <p>故事以七夕相会为情绪核心，采用织女与牛郎双线靠近的结构展开。开场由织女置身云海建立仙境与角色身份，随后以灵鹊飞行连接两人的空间；牛郎抬手追随、二人在云海之间靠近，最终于满月与鹊桥下完成相逢。五个关键镜头由静到动、由远到近，再回到具有仪式感的大全景终幕，使大礼物在有限时长内仍具备完整的铺垫、推进、高潮与收束。</p>
+
+              <h5>画面风格设计</h5>
+              <p>整体采用顶级 CG 动画电影质感与东方幻想仙侠美学。色彩以柔和的粉蓝、月白和星夜蓝为主，并用织女服饰的暖橙光与牛郎的冷蓝形成角色区分。云海和体积雾建立纵深，满月与逆光形成视觉锚点，梦幻星光粒子、花瓣和鹊鸟轨迹补充运动方向；半透明丝绸与发丝在光线下呈现轻盈质感，让画面保持唯美、空灵与高级感，同时避免装饰元素遮挡人物情绪。</p>
+
+              <h5>动画与动效落地</h5>
+              <p>动画阶段根据分镜情绪安排镜头推进、跟随、升降与缓慢环绕，并让衣摆、长发、鹊鸟、云层和星光形成不同速度的运动层次。相逢镜头通过人物靠近、暖光增强和粒子聚拢逐步建立高潮；结尾则降低运动幅度，让满月、鹊桥与人物剪影形成稳定停留，兼顾情绪余韵与礼物信息的识别。</p>
+
+              <div class="gallery overview-gallery" aria-label="七夕大礼物分镜、备用画面与人物形象设计">
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/week8-big-gift-storyboard.jpg" alt="七夕大礼物五段主分镜、备用画面与织女牛郎人物形象">
+                  <figcaption>七夕大礼物分镜全览 / 五段主叙事、备用镜头与人物形象设计</figcaption>
+                </figure>
+              </div>
+
+              <figure class="video-showcase">
+                <button class="video-load-button" id="week8-video-load" type="button">
+                  <strong>播放动画成片</strong>
+                  <span>点击后加载约 29MB 视频，建议在 Wi-Fi 环境观看</span>
+                </button>
+                <video id="week8-animation" controls playsinline preload="none" hidden poster="assets/week8-big-gift-storyboard.jpg" data-parts="assets/week8-big-gift-animation.part-01,assets/week8-big-gift-animation.part-02">
+                  当前浏览器不支持视频播放，请下载视频后查看。
+                </video>
+                <figcaption>七夕大礼物动画成片 / 点击播放并可切换全屏观看</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+      </details>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <dialog class="lightbox" id="lightbox" aria-label="图片预览">
+    <button class="close-lightbox" type="button" aria-label="关闭图片预览">×</button>
+    <img loading="lazy" decoding="async" src="" alt="">
+  </dialog>
+
+  <script>
+    const lightbox = document.querySelector("#lightbox");
+    const lightboxImage = lightbox.querySelector("img");
+    const closeButton = lightbox.querySelector(".close-lightbox");
+
+    document.querySelectorAll(".gallery img").forEach((image) => {
+      image.addEventListener("click", () => {
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.showModal();
+      });
+    });
+
+    closeButton.addEventListener("click", () => lightbox.close());
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        lightbox.close();
+      }
+    });
+
+    const weekOrder = {
+      "WEEK 1-2": 1,
+      "WEEK 3": 3,
+      "WEEK 4": 4,
+      "WEEK 5–6": 5,
+      "WEEK 7": 7,
+      "WEEK 8": 8
+    };
+    const weeksContainer = document.querySelector(".weeks");
+    Array.from(weeksContainer.querySelectorAll(".week"))
+      .sort((a, b) => {
+        const aLabel = a.querySelector("summary span").textContent.replace(/\s+/g, " ");
+        const bLabel = b.querySelector("summary span").textContent.replace(/\s+/g, " ");
+        const aWeek = Object.keys(weekOrder).find((week) => aLabel.includes(week));
+        const bWeek = Object.keys(weekOrder).find((week) => bLabel.includes(week));
+        return weekOrder[aWeek] - weekOrder[bWeek];
+      })
+      .forEach((week) => weeksContainer.appendChild(week));
+
+    const weekNavigation = [
+      { label: "WEEK 1–2", match: "WEEK 1-2", id: "week-1-2", index: "01" },
+      { label: "WEEK 3", match: "WEEK 3", id: "week-3", index: "03" },
+      { label: "WEEK 4", match: "WEEK 4", id: "week-4", index: "04" },
+      { label: "WEEK 5–6", match: "WEEK 5–6", id: "week-5-6", index: "05" },
+      { label: "WEEK 7", match: "WEEK 7", id: "week-7", index: "07" },
+      { label: "WEEK 8", match: "WEEK 8", id: "week-8", index: "08" }
+    ];
+
+    weekNavigation.forEach((item) => {
+      const section = Array.from(weeksContainer.querySelectorAll(".week")).find((week) =>
+        week.querySelector("summary span").textContent.replace(/\s+/g, " ").includes(item.match)
+      );
+      if (section) {
+        section.id = item.id;
+      }
+    });
+
+    const rail = document.querySelector(".rail");
+    rail.querySelectorAll(".week-nav a").forEach((link) => {
+      link.addEventListener("click", () => {
+        const target = document.querySelector(link.getAttribute("href"));
+        if (target) {
+          target.open = true;
+        }
+      });
+    });
+
+    const navigationLinks = Array.from(rail.querySelectorAll(".week-nav a"));
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+      if (!visible) return;
+      navigationLinks.forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === `#${visible.target.id}`);
+      });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+
+    weekNavigation.forEach((item) => {
+      const section = document.getElementById(item.id);
+      if (section) observer.observe(section);
+    });
+
+    const week8Animation = document.querySelector("#week8-animation");
+    const week8VideoLoad = document.querySelector("#week8-video-load");
+    if (week8Animation && week8VideoLoad) {
+      week8VideoLoad.addEventListener("click", () => {
+        const videoParts = week8Animation.dataset.parts.split(",");
+        week8VideoLoad.disabled = true;
+        week8VideoLoad.querySelector("strong").textContent = "动画加载中…";
+        Promise.all(videoParts.map((path) => fetch(path).then((response) => {
+          if (!response.ok) throw new Error(`Video part failed: ${path}`);
+          return response.arrayBuffer();
+        })))
+          .then((parts) => {
+            week8Animation.src = URL.createObjectURL(new Blob(parts, { type: "video/mp4" }));
+            week8Animation.hidden = false;
+            week8VideoLoad.remove();
+            week8Animation.load();
+            week8Animation.play().catch(() => {});
+          })
+          .catch(() => {
+            week8VideoLoad.disabled = false;
+            week8VideoLoad.querySelector("strong").textContent = "重新加载动画";
+            week8VideoLoad.querySelector("span").textContent = "加载失败，请检查网络后重试";
+          });
+      });
+    }
+  </script>
+</body>
+</html>

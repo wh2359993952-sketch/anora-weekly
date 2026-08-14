@@ -467,7 +467,7 @@ button, a { font: inherit; }
   .shell { display: block; }
   .rail { position: relative; width: 100%; height: auto; padding: 22px; border-right: 0; border-bottom: 1px solid var(--line); }
   .brand strong { font-size: 18px; }
-  .week-nav { margin-top: 22px; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+  .week-nav { margin-top: 22px; grid-template-columns: repeat(4, 1fr); gap: 6px; }
   .week-nav a { display: block; min-height: auto; padding: 10px 3px; border: 0; border-bottom: 2px solid var(--line); font-size: 9px; text-align: center; }
   .week-nav a::before, .week-nav a.active::after { display: none; }
   .week-nav a.active { border-color: var(--blue); }

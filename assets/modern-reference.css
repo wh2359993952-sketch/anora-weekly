@@ -353,7 +353,7 @@ button, a { font: inherit; }
   padding-top: 22px;
   border-top: 1px solid var(--line);
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 .timeline article { min-height: 132px; padding: 13px 20px 8px 0; border-right: 1px solid var(--line); }
 .timeline article:not(:first-child) { padding-left: 20px; }

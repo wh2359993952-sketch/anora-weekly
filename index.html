@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>实习周报</title>
-  <meta name="description" content="王好实习周报｜第1周至第9周项目进展与设计复盘">
+  <meta name="description" content="王好实习周报｜第1周至第10周项目进展与设计复盘">
   <link rel="canonical" href="https://wh2359993952-sketch.github.io/anora-weekly/">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="王好实习周报">
-  <meta property="og:title" content="王好实习周报｜第1周至第9周">
-  <meta property="og:description" content="网赚活动8月七夕主视觉、切片交付及历周项目进展与设计复盘">
+  <meta property="og:title" content="王好实习周报｜第1周至第10周">
+  <meta property="og:description" content="实习留用答辩自评、消消乐宣传页支援及历周项目进展与设计复盘">
   <meta property="og:url" content="https://wh2359993952-sketch.github.io/anora-weekly/">
   <meta property="og:image" content="https://wh2359993952-sketch.github.io/anora-weekly/assets/share-cover.jpg">
   <meta property="og:image:secure_url" content="https://wh2359993952-sketch.github.io/anora-weekly/assets/share-cover.jpg">
@@ -19,8 +19,8 @@
   <meta property="og:image:height" content="1052">
   <meta property="og:image:alt" content="网赚活动8月七夕主视觉设计展示">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="王好实习周报｜第1周至第9周">
-  <meta name="twitter:description" content="网赚活动8月七夕主视觉、切片交付及历周项目进展与设计复盘">
+  <meta name="twitter:title" content="王好实习周报｜第1周至第10周">
+  <meta name="twitter:description" content="实习留用答辩自评、消消乐宣传页支援及历周项目进展与设计复盘">
   <meta name="twitter:image" content="https://wh2359993952-sketch.github.io/anora-weekly/assets/share-cover.jpg">
   <style>
 :root {
@@ -951,6 +951,37 @@ figcaption {
 }
 
   </style>
+  <style>
+    .review-board {
+      min-height: 560px !important;
+      padding: 54px;
+      display: flex;
+      align-items: flex-start;
+      background:
+        linear-gradient(135deg, rgba(80, 104, 255, .22), transparent 48%),
+        radial-gradient(circle at 78% 18%, rgba(113, 231, 255, .18), transparent 32%),
+        #15192a !important;
+    }
+
+    .review-board::after { background: linear-gradient(180deg, transparent 45%, rgba(11, 14, 26, .9)) !important; }
+    .review-board-content { position: relative; z-index: 2; max-width: 510px; color: #fff; }
+    .review-board-content > span { color: rgba(255,255,255,.6); font-size: 10px; letter-spacing: .2em; }
+    .review-board-content > strong {
+      display: block;
+      margin-top: 45px;
+      font: 500 clamp(34px, 3.4vw, 54px)/1.15 Georgia, "Songti SC", serif;
+    }
+    .review-flow { margin-top: 48px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .review-flow span { padding: 13px 15px; border: 1px solid rgba(255,255,255,.22); color: rgba(255,255,255,.82); font-size: 12px; }
+    .full-promo { max-width: 760px; margin: 24px auto 0; }
+    .full-promo img { width: 100%; height: auto !important; max-height: none !important; object-fit: contain !important; }
+
+    @media (max-width: 760px) {
+      .review-board { min-height: 500px !important; padding: 38px 28px 120px; }
+      .review-board-content > strong { margin-top: 34px; }
+      .review-flow { margin-top: 34px; grid-template-columns: 1fr; }
+    }
+  </style>
   <link rel="stylesheet" href="assets/modern-reference.css">
 </head>
 <body>
@@ -958,7 +989,7 @@ figcaption {
     <aside class="rail">
       <a class="brand" href="#top">
         <strong>王好 · 设计周报</strong>
-        <span>Weekly Archive 01—09</span>
+        <span>Weekly Archive 01—10</span>
       </a>
 
       <nav class="week-nav" aria-label="周报时间线">
@@ -968,7 +999,8 @@ figcaption {
         <a href="#week-5-6" data-index="05">WEEK 5–6</a>
         <a href="#week-7" data-index="07">WEEK 7</a>
         <a href="#week-8" data-index="08">WEEK 8</a>
-        <a class="active" href="#week-9" data-index="09">WEEK 9</a>
+        <a href="#week-9" data-index="09">WEEK 9</a>
+        <a class="active" href="#week-10" data-index="10">WEEK 10</a>
       </nav>
 
       <div class="rail-footer">
@@ -982,57 +1014,67 @@ figcaption {
       <header class="topbar">
         <p>Selected work / Internship journal</p>
         <div class="meta">
-          <span>09 Weeks</span>
-          <span>12 Projects</span>
+          <span>10 Weeks</span>
+          <span>14 Projects</span>
           <span>王好 · MUX 酷狗设计部</span>
         </div>
       </header>
 
-      <section class="hero" id="week9-overview">
+      <section class="hero" id="week10-overview">
         <div class="hero-copy">
-          <div class="kicker">Week 09 · Campaign Delivery</div>
-          <h1>网赚活动<em>8月七夕主视觉</em></h1>
-          <p class="lede">第九周完成网赚 8 月七夕活动的视觉设计与切片输出。围绕“星河相会·鹊桥赴夕”建立粉紫星河、鹊桥与古风人物的浪漫主题，在沿用成熟活动框架的基础上完成首页、榜单、弹窗和奖励状态换肤，并将视觉方案进一步拆解为可供开发落地的完整切片与标注资产。</p>
+          <div class="kicker">Week 10 · Review &amp; Support</div>
+          <h1>留用答辩准备<em>消消乐宣传页支援</em></h1>
+          <p class="lede">第十周一边整理前九周的工作内容，完成个人自评文档并准备实习留用答辩；一边支援消消乐宣传页需求，把玩法升级、惊喜关卡和礼物图鉴等信息整理成一条清楚、轻松的长图阅读路径。</p>
           <div class="stats">
-            <div class="stat"><strong>01</strong><span>Campaign Skin</span></div>
-            <div class="stat"><strong>04</strong><span>Core Scenes</span></div>
-            <div class="stat"><strong>01</strong><span>Asset Package</span></div>
+            <div class="stat"><strong>09</strong><span>Weeks Reviewed</span></div>
+            <div class="stat"><strong>01</strong><span>Self Review</span></div>
+            <div class="stat"><strong>01</strong><span>Promo Page</span></div>
           </div>
         </div>
 
-        <figure class="hero-visual">
-          <img loading="eager" decoding="async" fetchpriority="high" src="assets/week9-qixi-activity.jpg" alt="网赚八月七夕活动完整视觉方案">
-          <div class="image-index">09</div>
+        <figure class="hero-visual review-board">
+          <div class="review-board-content">
+            <span>SELF REVIEW / WEEK 01—09</span>
+            <strong>把零散的周报整理成一条完整的成长线索</strong>
+            <div class="review-flow" aria-label="答辩自评整理过程">
+              <span>工作内容梳理</span>
+              <span>重点项目复盘</span>
+              <span>个人成长总结</span>
+              <span>后续计划准备</span>
+            </div>
+          </div>
+          <div class="image-index">10</div>
           <figcaption class="image-caption">
             <div>
-              <strong>网赚七夕 · 活动视觉与切片</strong>
-              <span>Campaign skin / Asset delivery</span>
+              <strong>实习阶段整理 · 留用答辩准备</strong>
+              <span>Self review / Presentation preparation</span>
             </div>
-            <b>SHIP 01</b>
+            <b>REVIEW 01</b>
           </figcaption>
         </figure>
       </section>
 
       <section class="projects" aria-labelledby="project-title">
         <div class="section-head">
-          <h2 id="project-title">Week 09 / 重点项目</h2>
-          <span>Research → Visual Skin → Asset Delivery</span>
+          <h2 id="project-title">Week 10 / 重点项目</h2>
+          <span>Review → Reflection → Visual Support</span>
         </div>
 
         <div class="project-grid">
           <article class="project-note">
             <span class="number">01</span>
-            <h3>网赚 8 月七夕活动<br>视觉设计与切片输出</h3>
-            <p>从阶段性提收需求出发，为既有活动模板设计可复用的七夕主题皮肤。方案以粉紫渐变、星河流光和鹊桥意象建立浪漫氛围，以古风人物和奖励卡片形成核心视觉锚点，并统一首页、排行榜、分享页、弹窗及奖励状态；最终按开发目录完成背景、标题、按钮、卡片、图标、弹窗和色值标注输出，让设计从视觉展示顺利进入工程落地。</p>
+            <h3>个人自评文档<br>与留用答辩准备</h3>
+            <p>重新整理第 1—9 周的工作内容，不只罗列完成项，而是把每个项目中的任务、修改过程和个人收获串联起来。重点复盘七夕集五福人物、卡牌、UI 换肤、大礼物和玩法道具等内容，让答辩能够更清楚地说明自己的参与范围、判断变化和阶段成长。</p>
           </article>
-          <figure class="project-image">
-            <img loading="lazy" decoding="async" src="assets/week9-slicing-output.jpg" alt="网赚七夕活动切片输出与开发标注全览">
-            <figcaption>QIXI CAMPAIGN / UI SLICING &amp; DELIVERY</figcaption>
-          </figure>
+          <article class="project-note">
+            <span class="number">02</span>
+            <h3>消消乐玩法升级<br>宣传长图支援</h3>
+            <p>围绕“关卡更好过、经验倍率提升”的核心信息，梳理礼物栏经典面板、初始步数提升、惊喜关卡预告和礼物图鉴四个模块。延续产品轻松活泼的绿色基调，用橙黄标题、卡片容器、对比数字和明确按钮组织重点，让用户能够顺着页面快速理解升级内容。</p>
+          </article>
         </div>
       </section>
 
-      <section class="timeline" aria-label="第一周至第九周项目摘要">
+      <section class="timeline" aria-label="第一周至第十周项目摘要">
         <article><small>WEEK 1–2</small><h4>基础学习与秀场 UI</h4><p>熟悉流程与工具，完成高等级用户开屏权益的风格探索和多尺寸适配。</p></article>
         <article><small>WEEK 3</small><h4>《音啾》与七夕探索</h4><p>完成陪伴 IP 参赛方案整合，并启动七夕集卡角色与节日视觉研究。</p></article>
         <article><small>WEEK 4</small><h4>角色、卡牌与 UI</h4><p>推进五套人物原画、人物大卡、卡背和活动 UI 的阶段性输出。</p></article>
@@ -1040,11 +1082,12 @@ figcaption {
         <article><small>WEEK 7</small><h4>系统定稿与玩法道具</h4><p>完成七夕 IP 体系定稿，以及螺旋桨箱四状态和落地效果设计。</p></article>
         <article><small>WEEK 8</small><h4>大礼物分镜与动画</h4><p>完成七夕大礼物的叙事分镜、画面风格设计与动画视频落地。</p></article>
         <article><small>WEEK 9</small><h4>网赚七夕活动交付</h4><p>完成七夕活动主题换肤、核心页面与弹窗设计，并整理全量切片与开发标注。</p></article>
+        <article><small>WEEK 10</small><h4>答辩整理与页面支援</h4><p>完成个人自评与留用答辩材料，并支援消消乐玩法升级宣传长图。</p></article>
       </section>
 
       <section class="report-archive" id="archive-details" aria-labelledby="archive-title">
         <div class="section-head">
-          <h2 id="archive-title">Week 01—09 / 完整周报</h2>
+          <h2 id="archive-title">Week 01—10 / 完整周报</h2>
           <span>Click a week to view all work</span>
         </div>
 
@@ -1425,7 +1468,7 @@ figcaption {
       <details class="week">
         <summary>
           <span>
-            <small>最新一周</small>
+            <small>第七周</small>
             WEEK 7
           </span>
           <b>七夕 IP 皮肤定稿 / 消消乐螺旋桨箱多状态设计</b>
@@ -1531,7 +1574,7 @@ figcaption {
       <details class="week">
         <summary>
           <span>
-            <small>最新一周</small>
+            <small>第八周</small>
             WEEK 8
           </span>
           <b>七夕「大礼物」叙事分镜 / 东方幻想动画视频制作</b>
@@ -1605,10 +1648,10 @@ figcaption {
         </div>
       </details>
 
-      <details class="week" open>
+      <details class="week">
         <summary>
           <span>
-            <small>最新一周</small>
+            <small>第九周</small>
             WEEK 9
           </span>
           <b>网赚 8 月七夕活动视觉设计 / 全量切片与开发交付</b>
@@ -1682,6 +1725,85 @@ figcaption {
           </article>
         </div>
       </details>
+
+      <details class="week" open>
+        <summary>
+          <span>
+            <small>最新一周</small>
+            WEEK 10
+          </span>
+          <b>实习留用答辩自评整理 / 消消乐宣传页需求支援</b>
+        </summary>
+
+        <div class="week-body">
+          <article class="report-section">
+            <h3>工作总结</h3>
+            <ul class="summary-list">
+              <li>整理第 1—9 周的工作内容，将分散在周报中的任务、修改过程和阶段收获重新归纳，完成个人自评文档，为实习留用答辩做准备。</li>
+              <li>重点复盘高等级用户权益视觉、“音啾”IP、七夕集五福人物与卡牌、UI 换肤、螺旋桨箱、大礼物动画和网赚七夕活动交付，明确自己在不同项目中的参与内容。</li>
+              <li>支援消消乐玩法升级宣传页需求，围绕经典礼物栏、初始步数提升、惊喜关卡和礼物图鉴等信息完成长图视觉整理。</li>
+              <li>延续消消乐已有的轻松活泼风格，用绿色场景、橙黄标题、卡片模块和大数字对比组织页面，让玩法升级信息更容易被快速理解。</li>
+            </ul>
+          </article>
+
+          <article class="report-section">
+            <h3>成长性</h3>
+            <p>整理自评文档的过程让我重新看了一遍这段实习。以前的周报更像每周工作的记录，这次需要把它们连成一条完整的线：刚开始关注画面表现，后来逐渐注意真实尺寸、页面结构、修改顺序和开发交付。把这些变化写清楚，也让我更明确自己已经积累了什么、接下来还需要继续练习什么。宣传页支援则让我练习在已有视觉体系中快速进入需求，先抓住最重要的信息，再用熟悉的组件和色彩完成清楚的表达。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>待改进</h3>
+            <p>答辩材料还需要继续压缩重复内容，补充更有代表性的修改前后对比，并通过试讲调整讲述节奏。宣传页后续会结合最终文案和使用场景检查小屏阅读效果，继续优化模块间距、文字大小和重点信息的先后顺序。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>工作小结</h3>
+            <p>WEEK 10 一部分工作是回头整理前九周的项目，把完成过的内容转化成能够清楚讲述的实习经历；另一部分是在较短时间内支援消消乐宣传页，用已有产品语言完成玩法升级信息的视觉表达。两项任务一个偏复盘，一个偏快速落地，也让我同时练习了总结和执行。</p>
+          </article>
+
+          <article class="report-section">
+            <h3>后续工作展望</h3>
+            <p>接下来会继续完善个人自评与答辩内容，围绕重点项目准备更清楚的讲述顺序和案例说明，并通过多次试讲控制时间。消消乐宣传页将根据反馈继续调整细节，确认文字、素材和页面层级后完成最终交付。</p>
+          </article>
+
+          <article class="report-section project">
+            <h3>项目总结</h3>
+
+            <div class="project-block">
+              <h4>项目一：个人自评文档与实习留用答辩准备</h4>
+
+              <h5>从每周记录重新梳理实习过程</h5>
+              <p>这次整理没有直接把九周周报拼在一起，而是先按“熟悉工作方式、参与具体项目、独立推进内容、完成开发交付”重新归类。高等级用户权益视觉帮助我建立多尺寸适配意识；“音啾”IP让我开始把角色设定和使用场景放在一起考虑；七夕集五福则贯穿人物、卡牌、UI、道具和动画，是最能体现持续修改与系列统一的项目；网赚七夕活动进一步补上了活动页面与切片交付的完整流程。</p>
+
+              <h5>把重点放在过程和判断的变化</h5>
+              <p>自评中除了说明做了什么，也补充了为什么调整、收到反馈后怎样处理，以及自己的工作方法发生了哪些变化。比如人物设计不再只看单张原画，而会放回卡牌和整组角色中比较；螺旋桨箱不再只追求细节丰富，而是缩小到棋盘尺寸检查状态能否被看清；活动页面完成后，还会继续关注切片命名、透明边缘和开发使用方式。这样的整理比单纯展示结果更能说明真实的参与过程。</p>
+
+              <h5>为答辩建立清楚的讲述顺序</h5>
+              <p>答辩准备将围绕个人特点、阶段工作、重点项目、问题复盘和未来计划展开。重点项目会选择七夕集五福进行说明，因为它包含了从人物形象到大礼物动画的连续内容，也经历了较多轮反馈。讲述时会保留关键版本对比，说明每一轮主要解决了什么问题，让成果和成长之间有更自然的联系。</p>
+            </div>
+
+            <div class="project-block">
+              <h4>项目二：消消乐玩法升级宣传页支援</h4>
+
+              <h5>先让用户看懂升级带来的变化</h5>
+              <p>页面最重要的信息是“关卡更容易通过、经验倍率更高”。因此首屏直接用大标题和熟悉的经典礼物栏画面建立认知，随后用 24 步提升到 30 步的数字对比说明闯关变化，再通过普通关卡与惊喜关卡的奖励倍率对照强化吸引力。礼物图鉴放在后段承接收集目标，最后用明确按钮引导用户进入消消乐。</p>
+
+              <h5>延续产品风格，控制长图节奏</h5>
+              <p>视觉上沿用绿色草地背景、橙黄色标题和圆润卡片，保持轻松、直观的游戏感。页面信息较多，因此用分段标题、深绿色内容区和浅色卡片建立层级，并通过黄色箭头、发光奖励和大数字把视线带到关键变化上。每个模块之间留出明显间隔，让长图在手机端向下浏览时仍能一段一段地阅读。</p>
+
+              <h5>在现有体系中快速完成支援</h5>
+              <p>这次需求更强调快速接入已有产品风格，而不是重新设计一套视觉语言。制作时优先复用成熟的标题、按钮、卡片和角色素材，再根据新玩法信息调整组合方式。这样既保持了页面与消消乐产品的一致性，也把更多时间放在信息排序、对比关系和阅读节奏上。</p>
+
+              <div class="gallery overview-gallery full-promo" aria-label="消消乐玩法升级宣传页完整设计">
+                <figure>
+                  <img loading="lazy" decoding="async" src="assets/week10-match3-promo.jpg" alt="消消乐玩法升级宣传长图，包含初始步数提升、惊喜关卡和礼物图鉴">
+                  <figcaption>消消乐玩法升级宣传页 / 经典礼物栏、关卡步数、惊喜倍率与礼物图鉴</figcaption>
+                </figure>
+              </div>
+            </div>
+          </article>
+        </div>
+      </details>
         </section>
       </section>
     </section>
@@ -1719,7 +1841,8 @@ figcaption {
       "WEEK 5–6": 5,
       "WEEK 7": 7,
       "WEEK 8": 8,
-      "WEEK 9": 9
+      "WEEK 9": 9,
+      "WEEK 10": 10
     };
     const weeksContainer = document.querySelector(".weeks");
     Array.from(weeksContainer.querySelectorAll(".week"))
@@ -1739,7 +1862,8 @@ figcaption {
       { label: "WEEK 5–6", match: "WEEK 5–6", id: "week-5-6", index: "05" },
       { label: "WEEK 7", match: "WEEK 7", id: "week-7", index: "07" },
       { label: "WEEK 8", match: "WEEK 8", id: "week-8", index: "08" },
-      { label: "WEEK 9", match: "WEEK 9", id: "week-9", index: "09" }
+      { label: "WEEK 9", match: "WEEK 9", id: "week-9", index: "09" },
+      { label: "WEEK 10", match: "WEEK 10", id: "week-10", index: "10" }
     ];
 
     weekNavigation.forEach((item) => {
